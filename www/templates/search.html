@@ -1,5 +1,17 @@
 <ion-view view-title="Search">
   <ion-content>
-    <h1>Search</h1>
+      <div class="list list-inset">
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search">
+          </label>
+      </div>
+      <div class="list">
+          <ion-item ng-repeat="search in searchs" class="item item-thumbnail-left" href="#">
+            <img src="">
+            <h2>{{ search.title }}</h2>
+            <p>{{ search.short }}</p>
+          </ion-item>
+      </div>
   </ion-content>
 </ion-view>
