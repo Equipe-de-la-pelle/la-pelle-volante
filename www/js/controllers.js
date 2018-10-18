@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['starter.services'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -41,20 +41,14 @@ angular.module('starter.controllers', [])
   };
 })
 
-
-.controller('FetchProjects', function($scope) {
-  $scope.projects = projects;
+.controller('FetchProjects', function($scope, ProjectsService, $http) {
+  ProjectsService.index($http).then(function(data) {
+    $scope.projects = data.data.data;
+  })
 })
 
-.controller('FetchProject', function($scope, $stateParams) {
-  $scope.project = projects[parseInt($stateParams.projectId)];
+.controller('FetchProject', function($scope, $stateParams, ProjectsService, $http) {
+  ProjectsService.show($http, parseInt($stateParams.projectId)).then(function(data) {
+    $scope.project = data.data.data;
+  });
 });
-
-projects = [
-  { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhReggae', id: 1 },
-  { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhChill', id: 2 },
-  { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhDubstep', id: 3 },
-  { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhIndie', id: 4 },
-  { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhRap', id: 5 },
-  { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhCowbell', id: 6 }
-];
