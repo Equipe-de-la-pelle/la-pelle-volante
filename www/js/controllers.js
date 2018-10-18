@@ -47,11 +47,13 @@ angular.module('starter.controllers', ['starter.services'])
   })
 })
 
-.controller('SearchProject', function($scope, $stateParams) {
-  $scope.searchs = [
-    { title: 'Project 1', img: "", short: "le ciel est bleu"},
-    { title: 'Project1', img: "", short: "le ballon est bleu"},
-  ]})
+.controller('SearchProject', function($scope, $stateParams, ProjectsService, $http) {
+    console.log($scope.input);
+    ProjectsService.search($http, "a").then(function(data) {
+      
+    })
+  
+ })
 
   .controller('FetchProject', function($scope, $stateParams, ProjectsService, $http) {
   ProjectsService.show($http, parseInt($stateParams.projectId)).then(function(data) {
