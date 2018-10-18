@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['starter.services'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -41,23 +41,20 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
-
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('FetchProjects', function($scope, ProjectsService, $http) {
+  ProjectsService.index($http).then(function(data) {
+    $scope.projects = data.data.data;
+  })
 })
 
 .controller('SearchProject', function($scope, $stateParams) {
   $scope.searchs = [
     { title: 'Project 1', img: "", desc: "le ciel est bleu"},
     { title: 'Project1', img: "", desc: "le ballon est bleu"},
-  ]
+  ]})
+  
+  .controller('FetchProject', function($scope, $stateParams, ProjectsService, $http) {
+  ProjectsService.show($http, parseInt($stateParams.projectId)).then(function(data) {
+    $scope.project = data.data.data;
+  })
 });
