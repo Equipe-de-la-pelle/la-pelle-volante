@@ -17,8 +17,9 @@ angular.module('starter.services', [])
     },
 
     create : function(http, attributes) {
-      headers = { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
-      return http.post('http://www.labelo.fr:3000/projects/', attributes, headers)
+      headers = { 'Content-Type': 'application/json' }
+
+      return http.post('http://www.labelo.fr:3000/projects/', JSON.stringify(attributes), headers)
       .success(function(response) {
         return response.data;
       })
