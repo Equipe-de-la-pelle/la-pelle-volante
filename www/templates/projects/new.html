@@ -3,13 +3,13 @@
     <form ng-submit="createProject()">
       <div class="list">
         <label class="item item-input">
-          <input type="text" placeholder="Titre" ng-model="projectData.title">
+          <input type="text" placeholder="Titre" ng-model="projectData.title" required=true>
         </label>
         <label class="item item-input">
-          <input type="text" placeholder="Description courte (200 caracteres max)" ng-model="projectData.short">
+          <input type="text" placeholder="Description courte (200 caracteres max)" ng-model="projectData.short" required=true>
         </label>
         <label class="item item-input">
-          <input type="text" placeholder="Description" ng-model="projectData.description">
+          <input type="text" placeholder="Description" ng-model="projectData.description" required=true>
         </label>
         <label class="item item-input">
           <input type="file" placeholder="Image" ng-model="projectData.image">

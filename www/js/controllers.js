@@ -61,12 +61,13 @@ angular.module('starter.controllers', ['starter.services'])
   })
 })
 
-.controller('CreateProject', function($scope, $stateParams, ProjectsService, $http) {
+.controller('CreateProject', function($scope, $stateParams, ProjectsService, $http, $state) {
   $scope.projectData = {};
   $scope.createProject = function() {
     ProjectsService.create($http, $scope.projectData)
     .then(function(data) {
       $scope.project = data.data.data;
+      $state.go('app.projects');
     });
   }
 });
