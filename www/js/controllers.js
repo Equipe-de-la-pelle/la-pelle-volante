@@ -49,10 +49,10 @@ angular.module('starter.controllers', ['starter.services'])
 
 .controller('SearchProject', function($scope, $stateParams) {
   $scope.searchs = [
-    { title: 'Project 1', img: "", desc: "le ciel est bleu"},
-    { title: 'Project1', img: "", desc: "le ballon est bleu"},
+    { title: 'Project 1', img: "", short: "le ciel est bleu"},
+    { title: 'Project1', img: "", short: "le ballon est bleu"},
   ]})
-  
+
   .controller('FetchProject', function($scope, $stateParams, ProjectsService, $http) {
   ProjectsService.show($http, parseInt($stateParams.projectId)).then(function(data) {
     $scope.project = data.data.data;
