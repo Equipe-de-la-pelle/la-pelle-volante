@@ -11,6 +11,7 @@ angular.module('starter.controllers', ['starter.services'])
 
   // Form data for the login modal
   $scope.loginData = {};
+  $scope.projectData = {};
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -51,10 +52,21 @@ angular.module('starter.controllers', ['starter.services'])
   $scope.searchs = [
     { title: 'Project 1', img: "", short: "le ciel est bleu"},
     { title: 'Project1', img: "", short: "le ballon est bleu"},
-  ]})
+  ]
+})
 
-  .controller('FetchProject', function($scope, $stateParams, ProjectsService, $http) {
+.controller('FetchProject', function($scope, $stateParams, ProjectsService, $http) {
   ProjectsService.show($http, parseInt($stateParams.projectId)).then(function(data) {
     $scope.project = data.data.data;
   })
+})
+
+.controller('CreateProject', function($scope, $stateParams, ProjectsService, $http) {
+  $scope.projectData = {};
+  $scope.createProject = function() {
+    ProjectsService.create($http, $scope.projectData)
+    .then(function(data) {
+      $scope.project = data.data.data;
+    });
+  }
 });

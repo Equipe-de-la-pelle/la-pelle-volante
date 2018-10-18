@@ -1,26 +1,28 @@
 <ion-view view-title="Creez votre projet">
-      <ion-content>
-            <div class="list">
-                <label class="item item-input">
-                    <input type="text" placeholder="Titre">
-                </label>
-                <label class="item item-input">
-                    <input type="text" placeholder="Description courte (200 caracteres max)">
-                </label>
-                <label class="item item-input">
-                    <input type="text" placeholder="Description">
-                </label>
-                <label class="item item-input">
-                    <input type="file" placeholder="Image">
-                </label>
-                <label class="item item-input">
-                    <input type="email" placeholder="Adresse email">
-                </label>
-            </div>
-            <div class="padding">
-                <button class="button button-block button-positive">
-                    Create
-                </button>
-            </div>
-      </ion-content>
+  <ion-content>
+    <form ng-submit="createProject()">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" placeholder="Titre" ng-model="projectData.title">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Description courte (200 caracteres max)" ng-model="projectData.short">
+        </label>
+        <label class="item item-input">
+          <input type="text" placeholder="Description" ng-model="projectData.description">
+        </label>
+        <label class="item item-input">
+          <input type="file" placeholder="Image" ng-model="projectData.image">
+        </label>
+        <label class="item item-input">
+          <input type="email" placeholder="Adresse email" ng-model="projectData.email">
+        </label>
+      </div>
+      <div class="padding">
+        <button class="button button-block button-positive" type="submit">
+          Create
+        </button>
+      </div>
+    </form>
+  </ion-content>
 </ion-view>

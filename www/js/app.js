@@ -56,6 +56,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
+  .state('app.newProject', {
+    url: '/projects/new',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/projects/new.html',
+        controller: 'CreateProject'
+      }
+    }
+  })
+
   .state('app.project', {
     url: '/projects/:projectId',
     views: {
@@ -66,15 +76,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.newProject', {
-    url: '/new',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/projects/new.html'
-      }
-    }
-  })
-  
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/projects');
 });

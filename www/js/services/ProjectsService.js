@@ -14,6 +14,14 @@ angular.module('starter.services', [])
       .success(function(response) {
         return response.data;
       })
+    },
+
+    create : function(http, attributes) {
+      headers = { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+      return http.post('http://www.labelo.fr:3000/projects/', attributes, headers)
+      .success(function(response) {
+        return response.data;
+      })
     }
   }
 });
