@@ -40,7 +40,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: '/search',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/search.html',
+        controller: 'SearchProject'
       }
     }
   })
@@ -60,6 +61,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       'menuContent': {
         templateUrl: 'templates/playlists.html',
         controller: 'PlaylistsCtrl'
+      }
+    }
+  })
+
+  .state('app.newProject', {
+    url: '/new',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/projects/new.html'
       }
     }
   })

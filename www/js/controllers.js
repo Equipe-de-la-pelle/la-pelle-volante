@@ -53,4 +53,11 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('SearchProject', function($scope, $stateParams) {
+  $scope.searchs = [
+    { title: 'Project 1', img: "", desc: "le ciel est bleu"},
+    { title: 'Project1', img: "", desc: "le ballon est bleu"},
+  ]
 });
