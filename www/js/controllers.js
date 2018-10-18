@@ -41,11 +41,14 @@ angular.module('starter.controllers', ['starter.services'])
   };
 })
 
-
-.controller('FetchProjects', function($scope, ProjectsService) {
-  $scope.projects = ProjectsService.index();
+.controller('FetchProjects', function($scope, ProjectsService, $http) {
+  ProjectsService.index($http).then(function(data) {
+    $scope.projects = data.data.data;
+  })
 })
 
-.controller('FetchProject', function($scope, $stateParams, ProjectsService) {
-  $scope.project = ProjectsService.show(parseInt($stateParams.projectId));
+.controller('FetchProject', function($scope, $stateParams, ProjectsService, $http) {
+  ProjectsService.show($http, parseInt($stateParams.projectId)).then(function(data) {
+    $scope.project = data.data.data;
+  });
 });

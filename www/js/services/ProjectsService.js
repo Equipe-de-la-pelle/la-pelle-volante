@@ -1,21 +1,19 @@
 angular.module('starter.services', [])
 .factory('ProjectsService', function() {
-  var projects = [
-    { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhReggae', id: 1 },
-    { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhChill', id: 2 },
-    { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhDubstep', id: 3 },
-    { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhIndie', id: 4 },
-    { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhRap', id: 5 },
-    { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhCowbell', id: 6 }
-  ];
-
   return {
-    index : function() {
-      return projects;
+
+    index : function(http) {
+      return http.get('http://www.labelo.fr:3000/projects')
+      .success(function(response) {
+        return response.data;
+      })
     },
 
-    show : function(id) {
-      return projects[id];
+    show : function(http, id) {
+      return http.get('http://www.labelo.fr:3000/projects/' + id)
+      .success(function(response) {
+        return response.data;
+      })
     }
   }
 });
