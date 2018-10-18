@@ -37,10 +37,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   })
 
   .state('app.search', {
-    url: '/search',
+    url: '/projects/search',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html',
+        templateUrl: 'templates/projects/search.html',
         controller: 'SearchProject'
       }
     }
@@ -74,7 +74,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
-  
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/projects');
 });
