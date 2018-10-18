@@ -1,9 +1,9 @@
 <ion-view view-title="Search">
   <ion-content>
-      <div class="list list-inset">
+      <div class="list list-inset" ng-controller="SearchProject as ctrl">
           <label class="item item-input">
             <i class="icon ion-search placeholder-icon"></i>
-            <input type="text" placeholder="Search" onchange="doSomething()"/>
+            <input type="text" placeholder="Search" ng-model="ctrl.value" ng-change="ctrl.change()"/>
           </label>
       </div>
       <div class="list">
