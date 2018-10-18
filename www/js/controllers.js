@@ -48,16 +48,13 @@ angular.module('starter.controllers', ['starter.services'])
 })
 
 .controller('SearchProject', function($scope, $stateParams, ProjectsService, $http) {
-  var _this = this;
-  _this.value = '';
-
-  _this.change = function() {
-
-    $scope.projects = _this.value;
-    console.log($scope.search);
+  $scope.projectData = {};
+  $scope.searchProject = function() {
+    ProjectsService.search($http, $scope.projectData.title).then(function(data) {
+      $scope.projects = data.data.data;
+    });
   }
 })
-
 
 .controller('FetchProject', function($scope, $stateParams, ProjectsService, $http) {
   ProjectsService.show($http, parseInt($stateParams.projectId)).then(function(data) {
