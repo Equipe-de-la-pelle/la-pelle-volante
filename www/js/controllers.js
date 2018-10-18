@@ -41,16 +41,20 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+
+.controller('FetchProjects', function($scope) {
+  $scope.projects = projects;
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('FetchProject', function($scope, $stateParams) {
+  $scope.project = projects[parseInt($stateParams.projectId)];
 });
+
+projects = [
+  { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhReggae', id: 1 },
+  { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhChill', id: 2 },
+  { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhDubstep', id: 3 },
+  { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhIndie', id: 4 },
+  { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhRap', id: 5 },
+  { title: 'kjhsrk herkjherkjth ekjrht kjerh tkjerh tkjerhCowbell', id: 6 }
+];
