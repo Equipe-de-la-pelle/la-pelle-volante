@@ -50,3 +50,19 @@ h2 {
   color: #aaa;
   font-size: 25px;
 }
+
+.tab-item .icon {
+  margin-top: 6px;
+}
+
+label {
+  padding: 10px 25px !important;
+}
+
+.description {
+  min-height: 200px;
+}
+
+.short-desc {
+  min-height: 100px;
+}

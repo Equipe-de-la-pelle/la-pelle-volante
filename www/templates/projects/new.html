@@ -1,4 +1,4 @@
-<ion-view view-title="Creez votre projet">
+<ion-view view-title="Créez votre projet">
   <ion-content>
     <form ng-submit="createProject()">
       <div class="list">
@@ -6,10 +6,10 @@
           <input type="text" placeholder="Titre" ng-model="projectData.title" required=true>
         </label>
         <label class="item item-input">
-          <textarea placeholder="Description courte (200 caracteres max)" ng-model="projectData.short" required=true></textarea>
+          <textarea placeholder="Description courte (200 caracteres max)" ng-model="projectData.short" required=true maxlength=200 class="short-desc"></textarea>
         </label>
         <label class="item item-input">
-          <textarea placeholder="Description" ng-model="projectData.description" required=true></textarea>
+          <textarea placeholder="Description" ng-model="projectData.description" required=true class="description"></textarea>
         </label>
         <label class="item item-input">
           <input type="file" placeholder="Image" ng-model="projectData.image">
@@ -20,7 +20,7 @@
       </div>
       <div class="padding">
         <button class="button button-block button-positive" type="submit">
-          Create
+          Créer !
         </button>
       </div>
     </form>
