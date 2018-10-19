@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 .img4 {
-  max-height: 160px;
+  max-height: 180px;
 }
 
 .img4 > img {
@@ -13,7 +13,7 @@ h1 {
   text-align: center;
 }
 
-h2 {
+.projects-index h2 {
   padding: 20px 0;
 }
 
@@ -65,4 +65,9 @@ label {
 
 .short-desc {
   min-height: 100px;
+}
+
+.projects-search p,
+.projects-search h2 {
+  white-space: normal !important;
 }
