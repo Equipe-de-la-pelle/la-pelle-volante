@@ -71,3 +71,7 @@ label {
 .projects-search h2 {
   white-space: normal !important;
 }
+
+.projects-search form {
+  padding-bottom: 60px;
+}
