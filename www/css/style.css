@@ -1,1 +1,77 @@
 /* Empty. Add your own CSS if you like */
+.img4 {
+  max-height: 180px;
+}
+
+.img4 > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  text-align: center;
+}
+
+.projects-index h2 {
+  padding: 20px 0;
+}
+
+.projects-index .item {
+  text-align: justify;
+}
+
+.projects-index a {
+  padding: 0 !important;
+}
+
+.projects-index p {
+  border: 0;
+}
+
+.projects-show .img4 {
+  max-height: 400px;
+}
+
+.projects-index .list {
+  padding: 20px !important;
+}
+
+.item {
+  border-left: 0;
+  border-right: 0;
+}
+
+.projects-show p {
+  margin: 40px 10px;
+}
+
+.short {
+  color: #aaa;
+  font-size: 25px;
+}
+
+.tab-item .icon {
+  margin-top: 6px;
+}
+
+label {
+  padding: 10px 25px !important;
+}
+
+.description {
+  min-height: 200px;
+}
+
+.short-desc {
+  min-height: 100px;
+}
+
+.projects-search p,
+.projects-search h2 {
+  white-space: normal !important;
+}
+
+.projects-new form {
+  padding-bottom: 60px;
+}

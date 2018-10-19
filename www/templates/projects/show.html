@@ -1,7 +1,11 @@
-<ion-view view-title="Projects">
+<ion-view view-title="Projects" class="projects-show">
   <ion-content>
     <h1>{{project.title}}</h1>
-    <p>{{project.short}}</p>
+    <ion-item class="item-image img4">
+      <img src="http://labelo.fr:3000/projects/{{project.id}}/picture" sizes="(min-width: 40em) 80vw, 100vw">
+    </ion-item>
+    <p class="short">{{project.short}}</p>
     <p>{{project.description}}</p>
+    <ion-item>{{project.email}}</ion-item>
   </ion-content>
 </ion-view>

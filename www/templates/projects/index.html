@@ -1,9 +1,14 @@
-<ion-view view-title="Projects">
+<ion-view view-title="Projets" class="projects-index">
   <ion-content>
-    <h1>Liste des projets</h1>
     <ion-list>
-      <ion-item ng-repeat="project in projects" href="#/app/projects/{{project.id}}">
-        {{project.title}}
+      <ion-item ng-repeat="project in projects" href="#/app/projects/{{project.id}}" class="item">
+        <h2>{{project.title}}</h2>
+        <div>
+          <ion-item class="item-image img4">
+            <img src="http://labelo.fr:3000/projects/{{project.id}}/picture" sizes="(min-width: 40em) 80vw, 100vw">
+          </ion-item>
+          <p class="item">{{project.short}}</p>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>
