@@ -56,21 +56,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
+  .state('app.newProject', {
+    url: '/projects/new',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/projects/new.html',
+        controller: 'CreateProject'
+      }
+    }
+  })
+
   .state('app.project', {
     url: '/projects/:projectId',
     views: {
       'menuContent': {
         templateUrl: 'templates/projects/show.html',
         controller: 'FetchProject'
-      }
-    }
-  })
-
-  .state('app.newProject', {
-    url: '/new',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/projects/new.html'
       }
     }
   })
