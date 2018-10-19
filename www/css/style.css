@@ -1,8 +1,6 @@
 /* Empty. Add your own CSS if you like */
 .img4 {
-  width: 95%;
-  max-height: 200px;
-  margin: 20px;
+  max-height: 160px;
 }
 
 .img4 > img {
@@ -15,8 +13,16 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  padding: 20px 0;
+}
+
 .projects-index .item {
   text-align: justify;
+}
+
+.projects-index a {
+  padding: 0 !important;
 }
 
 .projects-index p {
@@ -25,4 +31,22 @@ h1 {
 
 .projects-show .img4 {
   max-height: 400px;
+}
+
+.projects-index .list {
+  padding: 20px !important;
+}
+
+.item {
+  border-left: 0;
+  border-right: 0;
+}
+
+.projects-show p {
+  margin: 40px 10px;
+}
+
+.short {
+  color: #aaa;
+  font-size: 25px;
 }
