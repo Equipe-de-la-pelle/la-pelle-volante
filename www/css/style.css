@@ -1,1 +1,28 @@
 /* Empty. Add your own CSS if you like */
+.img4 {
+  width: 95%;
+  max-height: 200px;
+  margin: 20px;
+}
+
+.img4 > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  text-align: center;
+}
+
+.projects-index .item {
+  text-align: justify;
+}
+
+.projects-index p {
+  border: 0;
+}
+
+.projects-show .img4 {
+  max-height: 400px;
+}
